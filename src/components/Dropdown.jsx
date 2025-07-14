@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/Dropdown.css'
 
 export default function Dropdown({
     icon,
