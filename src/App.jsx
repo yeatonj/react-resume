@@ -5,6 +5,7 @@ import './App.css'
 import Resume from './components/Resume'
 import Summary from './components/Summary'
 import Education from './components/Education'
+import Work from './components/Work'
 
 function App() {
   const [firstName, setFirstName] = useState("John");
@@ -13,6 +14,7 @@ function App() {
   const [phone, setPhone] = useState("(123) 123-1234");
   const [summary, setSummary] = useState("This is an example summary. Use this section to talk a little bit about yourself and give an overview of your skills and areas of expertise");
   const [edFormData, setEdFormData] = useState([]);
+  const [workFormData, setWorkFormData] = useState([]);
   const [edInfo, setEdInfo] = useState([
     {
       name:"Test Univ",
@@ -96,6 +98,29 @@ function App() {
           edSetter={setEdInfo}
           edFormData={edFormData}
           edFormSetter={setEdFormData}
+        />
+      </Dropdown>
+
+
+      <Dropdown
+        icon={"icon"}
+        description={"Work History"}
+        clickHandler={() => setWorkFormData([
+          {
+            company:"",
+            city:"",
+            state:"",
+            start:"",
+            end:"",
+            title:"",
+            notes:[""]
+          }
+        ])}
+      >
+        <Work 
+          workSetter={setWorkInfo}
+          workFormData={workFormData}
+          workFormSetter={setWorkFormData}
         />
       </Dropdown>
       
