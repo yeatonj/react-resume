@@ -1,3 +1,5 @@
+import '../styles/Resume.css'
+
 export default function Resume({
     firstName,
     lastName,

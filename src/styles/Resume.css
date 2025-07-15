@@ -1,0 +1,10 @@
+.ed-header, .work-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resume {
+    border: 1px black solid;
+    padding: 60px;
+}
