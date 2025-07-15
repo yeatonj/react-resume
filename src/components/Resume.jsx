@@ -48,6 +48,9 @@ function HeaderSection({
 }
 
 function SummarySection({ summary }) {
+    if (summary =="") {
+        return <></>
+    }
     return (
         <div className="resume-summary">
             <h2>Summary</h2>

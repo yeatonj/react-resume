@@ -3,6 +3,7 @@ import PersonalInfo from './components/PersonalInfo'
 import Dropdown from './components/Dropdown'
 import './App.css'
 import Resume from './components/Resume'
+import Summary from './components/Summary'
 
 function App() {
   const [firstName, setFirstName] = useState("John");
@@ -64,6 +65,16 @@ function App() {
           phoneSetter={setPhone}
         />
       </Dropdown>
+
+      <Dropdown
+        icon={"icon"}
+        description={"Summary"}
+      >
+        <Summary 
+          summarySetter={setSummary}
+        />
+      </Dropdown>
+
       <Resume 
         firstName={firstName}
         lastName={lastName}

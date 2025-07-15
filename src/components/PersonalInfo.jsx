@@ -26,10 +26,6 @@ export default function PersonalInfo({
     }
 
     return (
-        // <div>
-        //     <p>This is a test of the personal information section</p>
-        //     <button onClick={submitButton}>Submit new info</button>
-        // </div>
         <form action="" method="post" id="personal-form">
             <label htmlFor="first">First Name:</label>
             <input type="text" name="first" id="first" required />
