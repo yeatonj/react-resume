@@ -24,17 +24,27 @@ export default function Education({
         edFormSetter(formData);
     }
 
+    function handleNoteFormChange(index, subindex, event) {
+        let formData = [...edFormData];
+        formData[index]['notes'][subindex] = event.target.value;
+        edFormSetter(formData);
+    }
+
     function addUniversity() {
         let newUniv ={name:"", city:"", state:"", start:"", end:"", degree:"", notes:[""]};
         edFormSetter([...edFormData, newUniv]);
     }
 
-    function removeUniversity() {
-
+    function removeUniversity(index) {
+        let formData = [...edFormData];
+        formData.splice(index, 1);
+        edFormSetter(formData);
     }
 
-    function addNote() {
-
+    function addDetail(index) {
+        let formData = [...edFormData];
+        formData[index]['notes'].push("");
+        edFormSetter(formData);
     }
 
     return (
@@ -44,6 +54,8 @@ export default function Education({
                     <div className="ed-input-card" key={index}>
                         <label>Institution:</label>
                         <input type="text" name="name" value={input.name} onChange={event =>handleFormChange(index, event)} required />
+
+                        <button onClick={() => removeUniversity(index)}>Remove</button>
 
                         <label>City:</label>
                         <input type="text" name="city" value={input.city} onChange={event =>handleFormChange(index, event)} required />
@@ -60,6 +72,18 @@ export default function Education({
                         <label>Degree:</label>
                         <input type="text" name="degree" value={input.degree} onChange={event =>handleFormChange(index, event)} />
                         
+                        <p>Details:</p>
+                        <div className="ed-notes">
+                            {input.notes.map((note, subindex) => {
+                                return (
+                                    <div key={subindex}>
+                                        <label>Note:</label>
+                                        <input type="text" name="note" value={note} onChange={event =>handleNoteFormChange(index, subindex, event)} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <button onClick={() => {addDetail(index)}}>Add</button>
                     </div>
                 )
             })}
