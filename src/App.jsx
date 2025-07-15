@@ -4,6 +4,7 @@ import Dropdown from './components/Dropdown'
 import './App.css'
 import Resume from './components/Resume'
 import Summary from './components/Summary'
+import Education from './components/Education'
 
 function App() {
   const [firstName, setFirstName] = useState("John");
@@ -11,6 +12,7 @@ function App() {
   const [email, setEmail] = useState("test_email@notasite.com");
   const [phone, setPhone] = useState("(123) 123-1234");
   const [summary, setSummary] = useState("This is an example summary. Use this section to talk a little bit about yourself and give an overview of your skills and areas of expertise");
+  const [edFormData, setEdFormData] = useState([]);
   const [edInfo, setEdInfo] = useState([
     {
       name:"Test Univ",
@@ -74,6 +76,29 @@ function App() {
           summarySetter={setSummary}
         />
       </Dropdown>
+
+      <Dropdown
+        icon={"icon"}
+        description={"Education"}
+        clickHandler={() => setEdFormData([
+          {
+            name:"",
+            city:"",
+            state:"",
+            start:"",
+            end:"",
+            degree:"",
+            notes:[""]
+          }
+        ])}
+      >
+        <Education 
+          edSetter={setEdInfo}
+          edFormData={edFormData}
+          edFormSetter={setEdFormData}
+        />
+      </Dropdown>
+      
 
       <Resume 
         firstName={firstName}
