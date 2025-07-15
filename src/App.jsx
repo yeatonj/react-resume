@@ -61,6 +61,7 @@ function App() {
           firstNameSetter={setFirstName}
           lastNameSetter={setLastName}
           emailSetter={setEmail}
+          phoneSetter={setPhone}
         />
       </Dropdown>
       <Resume 
