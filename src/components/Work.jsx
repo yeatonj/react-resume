@@ -1,4 +1,4 @@
-
+import '../styles/Work.css'
 
 
 export default function Work({
@@ -55,7 +55,7 @@ export default function Work({
                         <label>Company:</label>
                         <input type="text" name="company" value={input.company} onChange={event =>handleFormChange(index, event)} required />
 
-                        <button onClick={(event) => {event.preventDefault(); removeWork(index)}}>Remove</button>
+                        <button onClick={(event) => {event.preventDefault(); removeWork(index)}}>Remove Position</button>
 
                         <label>City:</label>
                         <input type="text" name="city" value={input.city} onChange={event =>handleFormChange(index, event)} required />
@@ -83,7 +83,7 @@ export default function Work({
                                 )
                             })}
                         </div>
-                        <button onClick={(event) => {event.preventDefault(); addDetail(index)}}>Add</button>
+                        <button onClick={(event) => {event.preventDefault(); addDetail(index)}}>Add Note</button>
                     </div>
                 )
             })}

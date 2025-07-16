@@ -58,71 +58,69 @@ function App() {
 
   return (
     <>
-      <Dropdown
-        icon={"icon"}
-        description={"Personal Information"}
-      >
-        <PersonalInfo 
-          firstNameSetter={setFirstName}
-          lastNameSetter={setLastName}
-          emailSetter={setEmail}
-          phoneSetter={setPhone}
-        />
-      </Dropdown>
-
-      <Dropdown
-        icon={"icon"}
-        description={"Summary"}
-      >
-        <Summary 
-          summarySetter={setSummary}
-        />
-      </Dropdown>
-
-      <Dropdown
-        icon={"icon"}
-        description={"Education"}
-        clickHandler={() => setEdFormData([
-          {
-            name:"",
-            city:"",
-            state:"",
-            start:"",
-            end:"",
-            degree:"",
-            notes:[""]
-          }
-        ])}
-      >
-        <Education 
-          edSetter={setEdInfo}
-          edFormData={edFormData}
-          edFormSetter={setEdFormData}
-        />
-      </Dropdown>
-
-
-      <Dropdown
-        icon={"icon"}
-        description={"Work History"}
-        clickHandler={() => setWorkFormData([
-          {
-            company:"",
-            city:"",
-            state:"",
-            start:"",
-            end:"",
-            title:"",
-            notes:[""]
-          }
-        ])}
-      >
-        <Work 
-          workSetter={setWorkInfo}
-          workFormData={workFormData}
-          workFormSetter={setWorkFormData}
-        />
-      </Dropdown>
+      <section className="data-entry">
+        <Dropdown
+          icon={"icon"}
+          description={"Personal Information"}
+        >
+          <PersonalInfo
+            firstNameSetter={setFirstName}
+            lastNameSetter={setLastName}
+            emailSetter={setEmail}
+            phoneSetter={setPhone}
+          />
+        </Dropdown>
+        <Dropdown
+          icon={"icon"}
+          description={"Summary"}
+        >
+          <Summary
+            summarySetter={setSummary}
+          />
+        </Dropdown>
+        <Dropdown
+          icon={"icon"}
+          description={"Education"}
+          clickHandler={() => setEdFormData([
+            {
+              name:"",
+              city:"",
+              state:"",
+              start:"",
+              end:"",
+              degree:"",
+              notes:[""]
+            }
+          ])}
+        >
+          <Education
+            edSetter={setEdInfo}
+            edFormData={edFormData}
+            edFormSetter={setEdFormData}
+          />
+        </Dropdown>
+        <Dropdown
+          icon={"icon"}
+          description={"Work History"}
+          clickHandler={() => setWorkFormData([
+            {
+              company:"",
+              city:"",
+              state:"",
+              start:"",
+              end:"",
+              title:"",
+              notes:[""]
+            }
+          ])}
+        >
+          <Work
+            workSetter={setWorkInfo}
+            workFormData={workFormData}
+            workFormSetter={setWorkFormData}
+          />
+        </Dropdown>
+      </section>
       
 
       <Resume 

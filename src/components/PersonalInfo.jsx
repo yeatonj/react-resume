@@ -1,3 +1,5 @@
+import '../styles/PersonalInfo.css'
+
 export default function PersonalInfo({
     firstNameSetter,
     lastNameSetter,
@@ -27,17 +29,25 @@ export default function PersonalInfo({
 
     return (
         <form action="" method="post" id="personal-form">
-            <label htmlFor="first">First Name:</label>
-            <input type="text" name="first" id="first" required />
+            <div className="personal-input">
+                <label htmlFor="first">First Name:</label>
+                <input type="text" name="first" id="first" required />
+            </div>
             
-            <label htmlFor="last">Last Name:</label>
-            <input type="text" name="last" id="last" required />
+            <div className="personal-input">
+                <label htmlFor="last">Last Name:</label>
+                <input type="text" name="last" id="last" required />
+            </div>
             
-            <label htmlFor="mail">Email Address:</label>
-            <input type="email" name="mail" id="mail" required />
+            <div className="personal-input">
+                <label htmlFor="mail">Email Address:</label>
+                <input type="email" name="mail" id="mail" required />
+            </div>
             
-            <label htmlFor="phone">Phone Number:</label>
-            <input type="tel" name="phone" id="phone" />
+            <div className="personal-input">
+                <label htmlFor="phone">Phone Number:</label>
+                <input type="tel" name="phone" id="phone" />
+            </div>
         
             <button type="submit" onClick={(event) => {submitButton(event)}}>
                     Submit

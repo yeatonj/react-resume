@@ -1,3 +1,5 @@
+import '../styles/Summary.css'
+
 export default function Summary({
     summarySetter
 }) {

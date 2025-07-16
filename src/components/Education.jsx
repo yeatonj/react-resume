@@ -1,4 +1,4 @@
-
+import '../styles/Education.css'
 
 
 export default function Education({
@@ -55,7 +55,7 @@ export default function Education({
                         <label>Institution:</label>
                         <input type="text" name="name" value={input.name} onChange={event =>handleFormChange(index, event)} required />
 
-                        <button onClick={(event) => {event.preventDefault(); removeUniversity(index)}}>Remove</button>
+                        <button onClick={(event) => {event.preventDefault(); removeUniversity(index)}}>Remove Institution</button>
 
                         <label>City:</label>
                         <input type="text" name="city" value={input.city} onChange={event =>handleFormChange(index, event)} required />
@@ -83,7 +83,7 @@ export default function Education({
                                 )
                             })}
                         </div>
-                        <button onClick={(event) => {event.preventDefault(); addDetail(index)}}>Add</button>
+                        <button onClick={(event) => {event.preventDefault(); addDetail(index)}}>Add Note</button>
                     </div>
                 )
             })}
